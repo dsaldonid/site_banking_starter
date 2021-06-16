@@ -3,6 +3,17 @@ const Bank = require("../models/bank")
 const { NotFoundError } = require("../utils/errors")
 const router = express.Router()
 
+// list all transactions  transfers
+router.get("/transactions&transfers", async (req, res, next) => {
+  try {
+    const transactions = await Bank.listTransactions()
+    const transfers = await Bank.listTransfers()
+    res.status(200).json({ transactions,transfers })
+  } catch (err) {
+    next(err)
+  }
+})
+
 // list all transactions
 router.get("/transactions", async (req, res, next) => {
   try {
