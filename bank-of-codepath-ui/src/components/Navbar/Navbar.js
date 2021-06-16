@@ -7,9 +7,9 @@ import "./Navbar.css"
 export default function Navbar() {
   return (
     <nav className="Navbar">
-      <Link className="logo" to="/">
+      {/* <Link className="logo" to="/">
         <img src={codepath} alt="logo" />
-      </Link>
+      </Link> */}
 
       <div className="search">
         <FilterInput />
